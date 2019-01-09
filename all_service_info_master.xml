@@ -3,7 +3,7 @@
 	<entry>
 		<id>2797964493e046632abe64421edc72de</id>
 		<title>National_Geochemical_Survey</title>
-		<serviceType>wms</serviceType>
+		<serviceType>wfs</serviceType>
 		<serviceUrl>https://mrdata.usgs.gov/wfs/ngs</serviceUrl>
 	</entry>
 	<entry>
@@ -147,7 +147,7 @@
 	<entry>
 		<id>f4f28bcc87e2de217dd896cca6c0ed84</id>
 		<title>NCEI NEXRAD WFS</title>
-		<serviceType>wms</serviceType>
+		<serviceType>wfs</serviceType>
 		<serviceUrl>https://gis.ncdc.noaa.gov/arcgis/services/cdo/nexrad/MapServer/WFSServer</serviceUrl>
 	</entry>
 	<entry>
