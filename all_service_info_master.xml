@@ -375,8 +375,8 @@
 	<entry>
 		<id>1848679adcad274c22f6e690b2d58359</id>
 		<title>Amtrak Stations</title>
-		<serviceType>agsfeatureserver</serviceType>
-		<serviceUrl>https://www.arcgis.com/home/webmap/viewer.html?url=https%3A%2F%2Fmaps.bts.dot.gov%2Fservices%2Frest%2Fservices%2FNTAD%2FAmtrak_Stations%2FMapServer&source=sd </serviceUrl>
+		<serviceType>agsmapserver</serviceType>
+		<serviceUrl>https://maps.bts.dot.gov/services/rest/services/NTAD/Amtrak_Stations/MapServer/</serviceUrl>
 	</entry>
 	<entry>
 		<id>9313d6c2643370adba2f5c0757848ff6</id>
