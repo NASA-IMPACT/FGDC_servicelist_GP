@@ -88,7 +88,7 @@
 		<id>1fec169d9e3e0e17861b7dd7f2327e7d</id>
 		<title>CetMap_BIA (FeatureServer)</title>
 		<serviceType>agsfeatureserver</serviceType>
-		<serviceUrl>http://services2.arcgis.com/C8EMgrsFcRFL6LrL/arcgis/rest/services/CetMap_BIA/FeatureServer</serviceUrl>
+		<serviceUrl>https://services2.arcgis.com/C8EMgrsFcRFL6LrL/arcgis/rest/services/CetMap_BIA/FeatureServer</serviceUrl>
 	</entry>
 	<entry>
 		<id>94d7535dfc6652abd42d53f91be720b2</id>
