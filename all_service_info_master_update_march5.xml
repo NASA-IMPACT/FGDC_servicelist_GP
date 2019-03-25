@@ -618,4 +618,34 @@
 		<serviceType>wms</serviceType>
 		<serviceUrl>https://gis1.usgs.gov/arcgis/services/PADUS1_4/IUCNCategories_OtherConservationAreas/MapServer/WMSServer?request=GetCapabilities&amp;service=WMS</serviceUrl>
 	</entry>
+	<entry>
+		<id>4adcc38e8d4027298e4411c41a19d5fb</id>
+		<title>TIGERweb/tigerWMS_Current/MapServer/WmsServer</title>
+		<serviceType>wms</serviceType>
+		<serviceUrl>https://tigerweb.geo.census.gov/arcgis/services/TIGERweb/tigerWMS_Current/MapServer/WmsServer</serviceUrl>
+	</entry>
+	<entry>
+		<id>dd85896e48238a37c7d8bb2a4d2b3463</id>
+		<title>TIGERweb/AIANNHA (MapServer)</title>
+		<serviceType>agsmapserver</serviceType>
+		<serviceUrl>https://tigerweb.geo.census.gov/arcgis/rest/services/TIGERweb/AIANNHA/MapServer</serviceUrl>
+	</entry>
+	<entry>
+		<id>61d9a63522ad99b6314cf50bf5e50d02</id>
+		<title>TIGERweb/State_County (MapServer)</title>
+		<serviceType>agsmapserver</serviceType>
+		<serviceUrl>https://tigerweb.geo.census.gov/arcgis/rest/services/TIGERweb/State_County/MapServer</serviceUrl>
+	</entry>
+	<entry>
+		<id>6185b280bb2ec518b06d458e0de3f76c</id>
+		<title>trackline_combined_dynamic</title>
+		<serviceType>wms</serviceType>
+		<serviceUrl>http://maps.ngdc.noaa.gov/arcgis/services/web_mercator/trackline_combined_dynamic/MapServer/WMSServer?request=GetCapabilities&service=WMS</serviceUrl>
+	</entry>
+	<entry>
+		<id>99e9e78eb16204246fecf1dbe8840202</id>
+		<title>Trackline Geophysical Data</title>
+		<serviceType>agsmapserver</serviceType>
+		<serviceUrl>http://maps.ngdc.noaa.gov/arcgis/rest/services/web_mercator/trackline_combined_dynamic/MapServer</serviceUrl>
+	</entry>
 </feed>
