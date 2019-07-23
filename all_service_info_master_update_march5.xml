@@ -133,7 +133,7 @@
 		<serviceUrl>https://coastalmap.marine.usgs.gov/cmgp/rest/services/National/slc_LongTerm/MapServer</serviceUrl>
 	</entry>
 	<entry>
-		<id>aede9f610a7aebbaaa208b25d29d0811</id>
+		<id>f7ffd258d41bf8bf3e852107292fa785</id>
 		<title>NCEI ArcGIS REST Services Directory</title>
 		<serviceType>agsmapserver</serviceType>
 		<serviceUrl>https://gis.ncdc.noaa.gov/arcgis/rest/services/cdo/precip_hly/MapServer</serviceUrl>
