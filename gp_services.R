@@ -13,23 +13,23 @@ library(RJSONIO)
 services <- fromJSON("https://ual.geoplatform.gov/api/communities/4eebc494059beab9fda54cb078927ddc/items?type=regp:Service&size=200")
 
 #Create an empty vector to hold all of the service IDs
-service_ids <- c()
-service_label <- c() 
+id <- c()
+title <- c() 
 
 #Loop through each service entry in the JSON file (now an R list)
 for(i in 1:length(services[[1]])){
-  service_ids[i] <- services[[1]][[i]][['id']] 
-  service_label[i] <- services[[1]][[i]][['label']] 
+  id[i] <- services[[1]][[i]][['id']] 
+  title[i] <- services[[1]][[i]][['label']] 
 }
 
 #Create an empty vector to hold all of the service urls
-service_urls <- c()
+serviceUrl <- c()
 service_types <- c()
 
 #Now loop though each service to get its URL (this could take a few seconds)
 for(i in 1:length(services[[1]])){
-  service_info <- fromJSON(paste0("https://ual.geoplatform.gov/api/services/", service_ids[i]))
-  service_urls[i] <- service_info$href
+  service_info <- fromJSON(paste0("https://ual.geoplatform.gov/api/services/", id[i]))
+  serviceUrl[i] <- service_info$href
   service_types[i] <- service_info$serviceType$label
 }
 #Substitute titles with FGDC required fields into a new vector 
@@ -40,13 +40,38 @@ service_typesnew1 <- gsub("Esri REST Tile Service", "agsmapserver", service_type
 service_typesnew2 <- gsub("Esri REST Feature Service", "agsfeatureserver", service_typesnew1)
 service_typesnew3 <- gsub("Esri REST Image Service", "agsimageserver", service_typesnew2)
 service_typesnew4 <- gsub("OGC Web Map Service \\(WMS\\)", "wms", service_typesnew3)
-service_typesnew5 <- gsub("OGC Web Feature Service \\(WFS\\)", "wfs", service_typesnew4)
+serviceType <- gsub("OGC Web Feature Service \\(WFS\\)", "wfs", service_typesnew4)
 
 #Create a data frame of the info so far
-all_service_info <- data.frame(service_ids, service_label, service_typesnew5, service_urls)
+all_service_info <- data.frame(id, title, serviceType, serviceUrl, stringsAsFactors = FALSE)
 View(all_service_info) #View the data frame
 
 #Write the data frame to a CSV
 write.table(all_service_info, quote=FALSE, row.names = FALSE, col.names = c("id", "title", "serviceType", "serviceUrl"), file = "all_service_info.csv", sep = ",")
 
+#Write the data frame to an XML file
+#Package to work with writing XML, will need to be installed if not already installed
+library(XML)
+
+#Referencing column names that will make up the tags in the XML
+names(all_service_info) <-c("id","title", "serviceType", "serviceURL")
+
+#Begin writing XML by adding tags using a for loop to achieve the desired tree structure
+xml <- xmlTree()
+
+xml$addTag("feed", close = FALSE, namespace = list(xsi = "http://www.w3.org/2001/XMLSchema-instance"))
+for(i in 1:nrow(all_service_info)) {
+  xml$addTag("entry", close = FALSE)
+  
+  for(j in names(all_service_info)) {
+    xml$addTag(j, all_service_info[i,j])
+  }
+  xml$closeTag()
+}
+xml$closeTag()
+
+#View the xml before saving to ensure desired output
+xml$value()
+#Save the xml
+cat(saveXML(xml$value(), encoding = "UTF-8", indent = TRUE, prefix = '<?xml version="1.0" encoding "UTF-8" standalone = "yes"?>'), file = "all_service_info.xml")
 
