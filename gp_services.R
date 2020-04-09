@@ -1,7 +1,7 @@
 #this script uses the GeoPlatform API to obtain all the services registered in the resilience community.
-#once the the service information is gathered, an output csv is created of the information required by FGDC 
-#in order to register an ATOM feed to check the services. Once in the CSV, you can export the table as an XML file
-#and upload it to the Github ATOM feed.
+#once the the service information is gathered, an output csv and xml is created of the information required by FGDC 
+#in order to register an ATOM feed to check the services. Once in the XML, you can
+#upload it to the Github ATOM feed.
 #Github ATOM feed: https://raw.githubusercontent.com/fkcook/FGDC_servicelist_GP/master/all_service_info_master_update_march5.xml
 #FGDC Status checker links: https://statuschecker.fgdc.gov/main-report/impact_161 ||| https://statuschecker.fgdc.gov/dashboard/impact_161
 
@@ -11,11 +11,17 @@ library(RJSONIO)
 #Package to work with writing XML, will need to be installed if not already installed
 library(XML)
 
+#Create a constant for the csv file
+CSV_FILE = "all_service_info.csv"
+
 #Create a constant for the url with the Resilience Community service information
-ResilienceUrl = "https://ual.geoplatform.gov/api/communities/4eebc494059beab9fda54cb078927ddc/items?type=regp:Service&size=200"
+RESILIENCE_URL = "https://ual.geoplatform.gov/api/communities/4eebc494059beab9fda54cb078927ddc/items?type=regp:Service&size=200"
+
+#Create a constant for the XML file
+XML_FILE = "all_service_info.xml"
 
 #Read the JSON text from the URL with the Resilience Community service information
-services <- fromJSON(ResilienceUrl)
+services <- fromJSON(RESILIENCE_URL)
 
 #Create an empty vector to hold all of the service IDs
 id <- c()
@@ -53,15 +59,12 @@ serviceType <- gsub("OGC Web Feature Service \\(WFS\\)", "wfs", serviceTypesNew4
 allServiceInfo <- data.frame(id, title, serviceType, serviceUrl, stringsAsFactors = FALSE)
 View(allServiceInfo) #View the data frame
 
-#Create a constant for the csv file
-CSVfile = "all_service_info.csv"
-
 #Write the data frame to a CSV
 write.table(allServiceInfo, 
             quote=FALSE, 
             row.names = FALSE, 
             col.names = c("id", "title", "serviceType", "serviceUrl"), 
-            file = CSVfile, 
+            file = CSV_FILE, 
             sep = ",")
 
 #Write the data frame to an XML file
@@ -85,12 +88,10 @@ xml$closeTag()
 #View the xml before saving to ensure desired output
 xml$value()
 
-#Create a constant for the XML file
-XMLfile = "all_service_info.xml"
-
 #Save the xml
 cat(saveXML(xml$value(), 
             encoding = "UTF-8", 
             indent = TRUE, 
             prefix = '<?xml version="1.0" encoding "UTF-8" standalone = "yes"?>'), 
-    file = XMLfile)
+    file = XML_FILE)
+
