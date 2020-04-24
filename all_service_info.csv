@@ -5,7 +5,7 @@ id,title,serviceType,serviceUrl
 109857d7628e1297f8c41cb1dd227339,Massachusetts_2014_1m,agsimageserver,http://gis.apfo.usda.gov/arcgis/rest/services/NAIP/Massachusetts_2014_1m/ImageServer
 bcdb76ad7c4df915b6849574c5431537,Pennsylvania_2015_1m,agsimageserver,http://gis.apfo.usda.gov/arcgis/rest/services/NAIP/Pennsylvania_2015_1m/ImageServer
 b8609ab14a11485178bec5287858d385,Florida_2015_1m,agsimageserver,http://gis.apfo.usda.gov/arcgis/rest/services/NAIP/Florida_2015_1m/ImageServer
-0342834d90124e41c9483a8780ce5b6a,Ohio_2015_1m,agsimageserver,http://gis.apfo.usda.gov/arcgis/rest/services/NAIP/Ohio_2015_1m/ImageServer
+0342834d90124e41c9483a8780ce5b6a,NAIP/NAIP Image Dates (Map Server),agsmapserver,https://gis.apfo.usda.gov/arcgis/rest/services/NAIP/NAIP_Image_Dates/MapServer/
 ce5742a73614f2a562f7bdcdc14915cd,New_Mexico_2014_1m,agsimageserver,http://gis.apfo.usda.gov/arcgis/rest/services/NAIP/New_Mexico_2014_1m/ImageServer
 139feb3118bca7e696ef999df9e8cc80,NAIP Seam Lines,agsmapserver,http://gis.apfo.usda.gov/arcgis/rest/services/NAIP/NAIP_Image_Dates/MapServer
 cf2710d080fb66310e83541ec617471e,Maryland_2015_1m,agsimageserver,http://gis.apfo.usda.gov/arcgis/rest/services/NAIP/Maryland_2015_1m/ImageServer
@@ -82,7 +82,7 @@ dd85896e48238a37c7d8bb2a4d2b3463,TIGERweb/AIANNHA (MapServer),agsmapserver,https
 3fbf47033d5da927967b48caccba9465,NTAD/Intermodal_Passenger_Connectivity_Database_IPCD (MapServer),agsmapserver,https://maps.bts.dot.gov/services/rest/services/NTAD/Intermodal_Passenger_Connectivity_Database_IPCD/MapServer
 6bc4993d429b5a374191f2463c882f23,Iowa_2015_1m,agsimageserver,http://gis.apfo.usda.gov/arcgis/rest/services/NAIP/Iowa_2015_1m/ImageServer
 658a7aec464e4a07f5ba744ba3c4d11e,New_Jersey_2015_1m,agsimageserver,http://gis.apfo.usda.gov/arcgis/rest/services/NAIP/New_Jersey_2015_1m/ImageServer
-a65575307d1f291d2f12b0324546b7d5,Virginia_2014_1m,agsimageserver,http://gis.apfo.usda.gov/arcgis/rest/services/NAIP/Virginia_2014_1m/ImageServer
+a65575307d1f291d2f12b0324546b7d5,VA 2014 (ID: 100),agsmapserver,https://gis.apfo.usda.gov/arcgis/rest/services/NAIP/NAIP_Image_Dates/MapServer/
 a887949a517e5b7529113d7862fb2702,Mississippi_2014_1m,agsimageserver,http://gis.apfo.usda.gov/arcgis/rest/services/NAIP/Mississippi_2014_1m/ImageServer
 a2e42b97f44cfd406af59284ddccf144,NTAD/Highway_Performance_Monitoring_System (MapServer),agsmapserver,https://maps.bts.dot.gov/services/rest/services/NTAD/Highway_Performance_Monitoring_System/MapServer
 01097507d37438eb42f912e11f8ed429,303D_NP21,agsmapserver,https://watersgeo.epa.gov/arcgis/rest/services/OWRAD_NP21/303D_NP21/MapServer/
