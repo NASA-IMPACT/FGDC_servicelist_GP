@@ -38,9 +38,15 @@
 	</entry>
 	<entry>
 		<id>0342834d90124e41c9483a8780ce5b6a</id>
-		<title>Ohio_2015_1m</title>
-		<serviceType>agsimageserver</serviceType>
-		<serviceUrl>http://gis.apfo.usda.gov/arcgis/rest/services/NAIP/Ohio_2015_1m/ImageServer</serviceUrl>
+		<title>NAIP/NAIP_Image_Dates (MapServer)</title>
+		<serviceType>agsmapserver</serviceType>
+		<serviceUrl>https://gis.apfo.usda.gov/arcgis/rest/services/NAIP/NAIP_Image_Dates/MapServer/</serviceUrl>
+	</entry>
+	<entry>
+		<id>a65575307d1f291d2f12b0324546b7d5</id>
+		<title>VA 2014 (ID: 100)</title>
+		<serviceType>agsmapserver</serviceType>
+		<serviceUrl>https://gis.apfo.usda.gov/arcgis/rest/services/NAIP/NAIP_Image_Dates/MapServer/</serviceUrl>
 	</entry>
 	<entry>
 		<id>ce5742a73614f2a562f7bdcdc14915cd</id>
